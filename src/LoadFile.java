@@ -26,7 +26,7 @@ class LoadFile {
             lines.add(fileReader.nextLine().trim());    // Назначить следующему элементу списка следующую строку, обрезав пробелы
 
             // Удаляем пустые строки
-            if (lines.get(x).trim().equals(""))
+            if (lines.get(x).equals(""))
                 lines.remove(x--);
             x++;
         }
