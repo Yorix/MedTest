@@ -30,7 +30,7 @@ class MakeTest {
                 }
             } else {
                 for (int j = 1; j < numberOfAnswers + 1; j++) {
-                    if (testQuestion[i][j].substring(0, 1).toLowerCase().equals("a"))   // Если первый символ строки 'A'
+                    if (testQuestion[i][j].toLowerCase().startsWith("a"))   // Если первый символ строки 'A'
                         trueAnswer[i] = j;                          // присвоить правильному ответу номер текущей строки
                     testQuestion[i][j] = testQuestion[i][j].substring(2);
                 }

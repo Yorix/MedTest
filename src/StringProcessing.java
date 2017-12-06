@@ -19,26 +19,26 @@ class StringProcessing {
                 case "a.":
                 case "+a":
                     allQuestions.get(questionNumber).add(1, lines[i]);
-                    if (!lines[i + 1].substring(0, 2).toLowerCase().equals("b.") && !lines[i + 1].substring(0, 2).toLowerCase().equals("+b"))   // Если следующая строка не начинается с B
+                    if (!lines[i + 1].toLowerCase().startsWith("b.") && !lines[i + 1].toLowerCase().startsWith("+b."))   // Если следующая строка не начинается с B
                         allQuestions.get(questionNumber).set(1, lines[i] + " " + lines[++i]);// добавить след. строку к текущей, пропустить счётчик
 
                     break;
                 case "b.":
                 case "+b":
                     allQuestions.get(questionNumber).add(2, lines[i]);
-                    if (!lines[i + 1].substring(0, 2).toLowerCase().equals("c.") && !lines[i + 1].substring(0, 2).toLowerCase().equals("+c"))   // Если следующая строка не начинается с B
+                    if (!lines[i + 1].toLowerCase().startsWith("c.") && !lines[i + 1].toLowerCase().startsWith("+c."))
                         allQuestions.get(questionNumber).set(2, lines[i] + " " + lines[++i]);
                     break;
                 case "c.":
                 case "+c":
                     allQuestions.get(questionNumber).add(3, lines[i]);
-                    if (!lines[i + 1].substring(0, 2).toLowerCase().equals("d.") && !lines[i + 1].substring(0, 2).toLowerCase().equals("+d"))
+                    if (!lines[i + 1].toLowerCase().startsWith("d.") && !lines[i + 1].toLowerCase().startsWith("+d."))
                         allQuestions.get(questionNumber).set(3, lines[i] + " " + lines[++i]);
                     break;
                 case "d.":
                 case "+d":
                     allQuestions.get(questionNumber).add(4, lines[i]);
-                    if (!lines[i + 1].substring(0, 2).toLowerCase().equals("e.") && !lines[i + 1].substring(0, 2).toLowerCase().equals("+e"))
+                    if (!lines[i + 1].toLowerCase().startsWith("e.") && !lines[i + 1].toLowerCase().startsWith("+e."))
                         allQuestions.get(questionNumber).set(4, lines[i] + " " + lines[++i]);
                     break;
                 case "e.":
