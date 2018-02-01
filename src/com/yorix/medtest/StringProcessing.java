@@ -11,7 +11,7 @@ class StringProcessing {
 
         allQuestions.add(new ArrayList<>());
         allQuestions.get(0).add("");
-        for (int i = 0; i < lines.length; i++) {               // Счётчик от 0 до последней строки текста
+        for (int i = 0, length = lines.length; i < length; i++) {               // Счётчик от 0 до последней строки текста
 
             // Далее присваиваем строкам места в списке в зависимости от первого символа строки.
             // Проверяем каждую строку на правильность расположения, так как строки с вариантами ответов
@@ -58,7 +58,7 @@ class StringProcessing {
         allQuestions.remove(allQuestions.size() - 1);
         String[][] ques = new String[allQuestions.size()][numberOfAnswers + 1];
 
-        for (int i = 0; i < allQuestions.size(); i++) {
+        for (int i = 0, size = allQuestions.size(); i < size; i++) {
             ques[i] = allQuestions.get(i).toArray(new String[numberOfAnswers + 1]);
         }
         return ques;
@@ -67,7 +67,7 @@ class StringProcessing {
 
     // Проверка на наличие в текстве "+" в качестве отметки правильных ответов
     boolean checkTextType(String[] question) {
-        for (int i = 1; i < question.length - 1; i++) {
+        for (int i = 1, length = question.length - 1; i < length; i++) {
             if (question[i].startsWith("+"))
                 return true;
         }

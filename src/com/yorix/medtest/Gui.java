@@ -63,7 +63,7 @@ class Gui extends JFrame {
 
 
         // Заполнение и добавление панели закладок.
-        for (int i = 0; i < question.length; i++) {
+        for (int i = 0, length = question.length; i < length; i++) {
             questionPanel[i] = new JPanel(new GridBagLayout());
             c1.gridy = 0;
             questionPanel[i].add(new JLabel("<html>" + question[i][0] + "</html>"), c1);
@@ -84,8 +84,8 @@ class Gui extends JFrame {
 
 
         change = new boolean[question.length];
-        for (int i = 0; i < question.length; i++)
-            for (int j = 0; j < 5; j++) {
+        for (int i = 0, length = question.length; i < length; i++)
+            for (int j = 0; j < numberOfAnswers; j++) {
                 int finalI = i;
                 int finalJ = j;
                 radioButton[i][j].addItemListener(e -> {
@@ -126,7 +126,7 @@ class Gui extends JFrame {
             JOptionPane.showMessageDialog(this,
                     "Результат: " + score + " из " + question.length + ".\n\nНажмите \"OK\" для просмотра верных ответов");
 
-            for (int i = 0; i < question.length; i++) {
+            for (int i = 0, length = question.length; i < length; i++) {
                 for (int j = 0; j < 5; j++) {
                     radioButton[i][j].setEnabled(false);
                 }
