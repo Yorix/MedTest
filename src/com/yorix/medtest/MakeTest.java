@@ -9,12 +9,12 @@ class MakeTest {
         String[][] testQuestion = new String[numberOfQuestions][numberOfAnswers + 1]; // Массив выбранных для теста вопросов
 
         for (int i = 0; i < numberOfQuestions; i++) {
-            int rnd = (int) (Math.random() * allQuestions.length); // Присвоить переменной для номера вопроса случайное число от 0 до ...
+            int rnd = (int) (Math.random() * allQuestions.length); // Присвоить переменной для номера вопроса случайное число от 0 до allQuestions.length
             testQuestion[i] = allQuestions[rnd].clone();
 
 
             // Перемешать ответы:
-            for (int j = 1; j <= numberOfAnswers; j++) {                      // 5 раз
+            for (int j = 1; j <= numberOfAnswers; j++) {                      // numberOfAnswers раз
                 int r = (int) Math.ceil(Math.random() * numberOfAnswers);     // Присвоить переменной r случайное число от 1 до 5
                 String tmp = testQuestion[i][j];               // Присвоить переменной tmp значение текущей строки
                 testQuestion[i][j] = testQuestion[i][r];       // Присвоить текущей строке значение строки под номером r (от 1 до 5)

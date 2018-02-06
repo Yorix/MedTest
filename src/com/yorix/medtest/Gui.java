@@ -127,7 +127,7 @@ class Gui extends JFrame {
                     "Результат: " + score + " из " + question.length + ".\n\nНажмите \"OK\" для просмотра верных ответов");
 
             for (int i = 0, length = question.length; i < length; i++) {
-                for (int j = 0; j < 5; j++) {
+                for (int j = 0; j < numberOfAnswers; j++) {
                     radioButton[i][j].setEnabled(false);
                 }
                 questionPanel[i].getComponent(trueAnswer[i]).setBackground(new Color(160, 255, 160));
